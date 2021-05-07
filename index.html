@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOVIE BOX</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <!-- navigation--------->
+  <nav>
+    <!-- logo--------->
+    <a href="#" class="logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuSpdSemYHEIR7zVmm_k7eVH9NUC_u-LNCEw&usqp=CAU">
+    </a>
+    <!--menu---------->
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Now Playing</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Up Coming</a></li>
+      <li><a href="#">Horror</a></li>
+    </ul>
+    <!--search-------->
+    <div class="search" id="searchForm">
+      <input type="text" placeholder="Find Movies">
+      <!--search icon-->
+      <i class="fas fa-search"></i>
+    </div>
+  </nav>
+  <section id="main">
+    <!--POPULAR------------------>
+    <!--heading--------->
+    <div>
+      <h1 class="popular">Popular</h1>
+    </div>
+    <div>
+      <ul id="popular"></ul>
+    </div>
+  <section id="main">
+    <!--NOW PLAYING------------------>
+    <!--heading--------->
+    <div>
+      <h1 class="nowPlaying">Now playing</h1>
+    </div>
+    <div class="container">
+      <ul id="PlayingNow"></ul>
+    </div>
+  </section>
+  <section id="main">
+    <!--NOW PLAYING------------------>
+    <!--heading--------->
+    <div>
+      <h1 class="UpComing">Up Coming</h1>
+    </div>
+    <div>
+      <ul id="UpComing"></ul>
+    </div>
+    <a href="#" id="myBtn" class="clickem">click me</a>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+
+ <!-- <li id="popular">
+        <div class="popular-box">
+          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
+        </div>
+      </li>
+      <li class="2">
+        <div class="popular-box">
+          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
+        </div>
+      </li>
+      <li class="3">
+        <div class="popular-box">
+          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
+        </div>
+      </li>
+      <li class="4">
+        <div class="popular-box">
+          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
+        </div>
+      </li> -->
