@@ -9,7 +9,6 @@
   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
    <!-- Axios -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
-  
 </head>
 <body>
   <!-- navigation--------->
@@ -35,24 +34,57 @@
   </nav>
 <!--main-------->
 <section id="main">
-  <!--h2 class="title">Toy story</h2-->
-  <h2 class="title" id="title">Toy story</h2>
+  <div  class="detail-container" >
   <div class="movie-detail">
-    <img class="backdrop_path" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
-    <div id="release_date">APLIL 23,2021</div>
-    <div class="Length">Length: 2h30</div>
-    <div class="category">category: Amime</div>
-    <p class="overview">
-      In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.
-    </p>
+    <h2 class="title" id="title"></h2>
+    <span id="release_date"></span>
+    <br>
+    <span>Length: </span><span id="length"></span><span>min</span>
+    <p class="overview" id="overview"></p>
+    <span id="category"></span>
     <div>
-      <a href="#">Trailer</a>
+      <a href="seatbooking.html">Get tickets</a>
     </div>
-    <div>
-    <a href="#">Get tickets</a>
-    </div>
+  </div>
+  <div id="trailer">
+    <iframe id="trailerMovie"  width="560" height="315"   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<!--------------------------------->
+<!-- <p><code>wrapAround: true</code></p> -->
+
+<!-- Flickity HTML init -->
+<!-- <div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+</div> -->
+  <!--------------------------------->
   </div>
 </section>
 <script src="main.js"></script>
+
+<script>
+  //Movie detail
+  let detailMovieLocal = JSON.parse(localStorage.getItem("detailMovie"));
+  let movieId = detailMovieLocal.id;
+  fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apikey}`).then(response => {
+    response.json().then(trailerMovie => {
+      let trailerYoutubeURL = trailerMovie.results[0].key;
+      const trailerYoutube = `https://www.youtube.com/embed/${trailerYoutubeURL}`;
+      document.getElementById("trailerMovie").setAttribute("src",trailerYoutube);
+    })
+  })
+  console.log(trailer); 
+  document.getElementById("title").innerHTML = detailMovieLocal.title;
+  document.getElementById("overview").innerHTML = detailMovieLocal.overview;
+  document.getElementById("release_date").innerHTML = detailMovieLocal.release_date;
+  document.getElementById("length").innerHTML = detailMovieLocal.runtime;
+</script>
 </body>
 </html>
+
+

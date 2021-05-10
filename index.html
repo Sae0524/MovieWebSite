@@ -61,30 +61,31 @@
     <div>
       <ul id="UpComing"></ul>
     </div>
-    <a href="#" id="myBtn" class="clickem">click me</a>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="main.js"></script>
+  <!-- <div id="ciccc"onclick="hello()">click</div> -->
+  <script>
+    function on() {
+      let idMovie = event.srcElement.id;
+      fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apikey}`)
+      .then(response => {
+        response.json().then(detailsData => {
+          localStorage.setItem("detailMovie", JSON.stringify(detailsData));
+          window.location.href = "movie.html"
+        })
+      })
+    }
+    
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+    </script>
 </body>
 </html>
 
- <!-- <li id="popular">
-        <div class="popular-box">
-          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
-        </div>
-      </li>
-      <li class="2">
-        <div class="popular-box">
-          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
-        </div>
-      </li>
-      <li class="3">
-        <div class="popular-box">
-          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
-        </div>
-      </li>
-      <li class="4">
-        <div class="popular-box">
-          <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTewZUhFqco_di_GARzgQRG4k8hLhIx1CSeXw&usqp=CAU">
-        </div>
-      </li> -->
+
+
+      
+      
+          
